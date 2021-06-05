@@ -1,0 +1,25 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+
+def homepageview(request):
+    return render(request,'home.html')
+
+
+def aboutpageview(request):
+    return render(request,'about.html')
+
+
+def contactpageview(request):
+    return render(request,'contact.html')
+
+def myform(request):
+    return render(request,'myform.html')
+    
+def process(request):
+    a = int(request.POST['text1'])
+    b = int(request.POST['text2'])
+    c = a+b
+    print(c)
+    return render(request,'ans.html',{'mysum' : c})
